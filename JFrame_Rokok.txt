@@ -5,6 +5,9 @@
  */
 package Project1;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author RIAN
@@ -14,6 +17,7 @@ public class Percobaan1 extends javax.swing.JFrame {
     int harga, jumlahBeli;
     double diskon, Subtotal, totalBayar, bayar, cash1, sisa;
     String sisa1;
+    DefaultTableModel model;
 
     /**
      * Creates new form CobaRES1
@@ -64,7 +68,7 @@ public class Percobaan1 extends javax.swing.JFrame {
         TampilKembalian = new javax.swing.JTextField();
         Bayar = new javax.swing.JButton();
         Exit = new javax.swing.JButton();
-        Cancel = new javax.swing.JButton();
+        Tambah = new javax.swing.JButton();
         GarisBatas1 = new javax.swing.JLabel();
         GarisBatas2 = new javax.swing.JLabel();
         Diskon = new javax.swing.JLabel();
@@ -79,7 +83,10 @@ public class Percobaan1 extends javax.swing.JFrame {
         GarisBatas3 = new javax.swing.JLabel();
         NamaBarang = new javax.swing.JLabel();
         Tampil_Nama = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabel = new javax.swing.JTable();
+        Reset1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         jLabel2.setText("jLabel2");
@@ -129,7 +136,7 @@ public class Percobaan1 extends javax.swing.JFrame {
                 DnhillHitam16ActionPerformed(evt);
             }
         });
-        getContentPane().add(DnhillHitam16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 130, -1));
+        getContentPane().add(DnhillHitam16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 130, -1));
 
         LuckyStrike.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(LuckyStrike);
@@ -140,7 +147,7 @@ public class Percobaan1 extends javax.swing.JFrame {
                 LuckyStrikeActionPerformed(evt);
             }
         });
-        getContentPane().add(LuckyStrike, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, -1, -1));
+        getContentPane().add(LuckyStrike, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
 
         Umild.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(Umild);
@@ -151,7 +158,7 @@ public class Percobaan1 extends javax.swing.JFrame {
                 UmildActionPerformed(evt);
             }
         });
-        getContentPane().add(Umild, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 70, -1));
+        getContentPane().add(Umild, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 70, -1));
 
         Ubold.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(Ubold);
@@ -162,7 +169,7 @@ public class Percobaan1 extends javax.swing.JFrame {
                 UboldActionPerformed(evt);
             }
         });
-        getContentPane().add(Ubold, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
+        getContentPane().add(Ubold, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
 
         LaIce.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(LaIce);
@@ -173,7 +180,7 @@ public class Percobaan1 extends javax.swing.JFrame {
                 LaIceActionPerformed(evt);
             }
         });
-        getContentPane().add(LaIce, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        getContentPane().add(LaIce, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
 
         MalboroPutih.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(MalboroPutih);
@@ -184,7 +191,7 @@ public class Percobaan1 extends javax.swing.JFrame {
                 MalboroPutihActionPerformed(evt);
             }
         });
-        getContentPane().add(MalboroPutih, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 150, -1, -1));
+        getContentPane().add(MalboroPutih, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, -1, -1));
 
         MalboroMerah.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(MalboroMerah);
@@ -195,7 +202,7 @@ public class Percobaan1 extends javax.swing.JFrame {
                 MalboroMerahActionPerformed(evt);
             }
         });
-        getContentPane().add(MalboroMerah, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 120, -1));
+        getContentPane().add(MalboroMerah, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 120, -1));
 
         Cigarillos.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(Cigarillos);
@@ -206,7 +213,7 @@ public class Percobaan1 extends javax.swing.JFrame {
                 CigarillosActionPerformed(evt);
             }
         });
-        getContentPane().add(Cigarillos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
+        getContentPane().add(Cigarillos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
 
         Djarum76.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(Djarum76);
@@ -217,7 +224,7 @@ public class Percobaan1 extends javax.swing.JFrame {
                 Djarum76ActionPerformed(evt);
             }
         });
-        getContentPane().add(Djarum76, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        getContentPane().add(Djarum76, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         DunhillPutih16.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(DunhillPutih16);
@@ -228,7 +235,7 @@ public class Percobaan1 extends javax.swing.JFrame {
                 DunhillPutih16ActionPerformed(evt);
             }
         });
-        getContentPane().add(DunhillPutih16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 130, -1));
+        getContentPane().add(DunhillPutih16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 130, -1));
 
         Surya16.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(Surya16);
@@ -239,7 +246,7 @@ public class Percobaan1 extends javax.swing.JFrame {
                 Surya16ActionPerformed(evt);
             }
         });
-        getContentPane().add(Surya16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
+        getContentPane().add(Surya16, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, -1, -1));
 
         Surya12.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup1.add(Surya12);
@@ -250,35 +257,31 @@ public class Percobaan1 extends javax.swing.JFrame {
                 Surya12ActionPerformed(evt);
             }
         });
-        getContentPane().add(Surya12, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+        getContentPane().add(Surya12, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
 
         oleh.setForeground(new java.awt.Color(0, 255, 255));
         oleh.setText("oleh");
-        getContentPane().add(oleh, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 540, 41, -1));
+        getContentPane().add(oleh, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 530, 60, 30));
 
         udin.setForeground(new java.awt.Color(0, 255, 255));
         udin.setText("Arasyi Alimddin");
-        getContentPane().add(udin, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 540, -1, -1));
+        getContentPane().add(udin, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 530, 110, 30));
 
         farrel.setForeground(new java.awt.Color(0, 255, 255));
         farrel.setText("Farrel Akbar R");
-        getContentPane().add(farrel, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 560, 90, -1));
+        getContentPane().add(farrel, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 550, 110, 30));
 
         JudulProject.setFont(new java.awt.Font("Lucida Calligraphy", 3, 24)); // NOI18N
-        JudulProject.setForeground(new java.awt.Color(0, 204, 204));
-        JudulProject.setText("Penjualan Rokok");
-        getContentPane().add(JudulProject, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 20, 240, 40));
+        JudulProject.setForeground(new java.awt.Color(255, 0, 0));
+        JudulProject.setText("WARUNG ROKOK \"SASAJIWANI\"");
+        getContentPane().add(JudulProject, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, 500, 40));
 
         Harga1.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         Harga1.setForeground(new java.awt.Color(255, 255, 0));
         Harga1.setText("Harga Satuan");
         getContentPane().add(Harga1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 110, -1));
 
-        TampilHargaSatuan1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TampilHargaSatuan1ActionPerformed(evt);
-            }
-        });
+        TampilHargaSatuan1.setEditable(false);
         getContentPane().add(TampilHargaSatuan1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 120, -1));
 
         JumlahBarang.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
@@ -286,23 +289,14 @@ public class Percobaan1 extends javax.swing.JFrame {
         JumlahBarang.setText("Jumlah Barang");
         getContentPane().add(JumlahBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 110, -1));
 
-        TampilJumlahBarang.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TampilJumlahBarangActionPerformed(evt);
-            }
-        });
         TampilJumlahBarang.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                TampilJumlahBarangKeyPressed(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TampilJumlahBarangKeyReleased(evt);
             }
         });
         getContentPane().add(TampilJumlahBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, 120, -1));
 
-        TampilTotalBayar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TampilTotalBayarActionPerformed(evt);
-            }
-        });
+        TampilTotalBayar.setEditable(false);
         getContentPane().add(TampilTotalBayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 120, -1));
 
         TotalBayar.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
@@ -314,12 +308,6 @@ public class Percobaan1 extends javax.swing.JFrame {
         PembayaranCash.setForeground(new java.awt.Color(255, 255, 0));
         PembayaranCash.setText("Pembayaran Cash");
         getContentPane().add(PembayaranCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 140, -1));
-
-        TampilPembayaranCash.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TampilPembayaranCashActionPerformed(evt);
-            }
-        });
         getContentPane().add(TampilPembayaranCash, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, 120, -1));
 
         KembalianSisa.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
@@ -327,25 +315,16 @@ public class Percobaan1 extends javax.swing.JFrame {
         KembalianSisa.setText("Kembalian / Sisa");
         getContentPane().add(KembalianSisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 500, 140, -1));
 
-        TampilKembalian.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TampilKembalianActionPerformed(evt);
-            }
-        });
+        TampilKembalian.setEditable(false);
         getContentPane().add(TampilKembalian, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 120, -1));
 
         Bayar.setText("Bayar");
-        Bayar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BayarMouseClicked(evt);
-            }
-        });
         Bayar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BayarActionPerformed(evt);
             }
         });
-        getContentPane().add(Bayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 77, -1));
+        getContentPane().add(Bayar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 80, 30));
 
         Exit.setText("Exit");
         Exit.addActionListener(new java.awt.event.ActionListener() {
@@ -353,19 +332,21 @@ public class Percobaan1 extends javax.swing.JFrame {
                 ExitActionPerformed(evt);
             }
         });
-        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 550, -1, -1));
+        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 550, -1, 30));
 
-        Cancel.setText("Cancel");
-        Cancel.addActionListener(new java.awt.event.ActionListener() {
+        Tambah.setText("Tambah");
+        Tambah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CancelActionPerformed(evt);
+                TambahActionPerformed(evt);
             }
         });
-        getContentPane().add(Cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 550, 80, -1));
+        getContentPane().add(Tambah, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 550, 80, 30));
 
+        GarisBatas1.setForeground(new java.awt.Color(204, 0, 51));
         GarisBatas1.setText("====================================");
-        getContentPane().add(GarisBatas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 260, -1));
+        getContentPane().add(GarisBatas1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 260, -1));
 
+        GarisBatas2.setForeground(new java.awt.Color(204, 0, 51));
         GarisBatas2.setText("====================================");
         getContentPane().add(GarisBatas2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 260, -1));
 
@@ -374,16 +355,11 @@ public class Percobaan1 extends javax.swing.JFrame {
         Diskon.setText("Diskon");
         getContentPane().add(Diskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 80, -1));
 
-        TampilDiskon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TampilDiskonActionPerformed(evt);
-            }
-        });
+        TampilDiskon.setEditable(false);
         getContentPane().add(TampilDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 370, 120, -1));
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, -1, -1));
 
-        jTable3.setBackground(new java.awt.Color(60, 139, 255));
-        jTable3.setForeground(new java.awt.Color(153, 0, 0));
+        jTable3.setAutoCreateRowSorter(true);
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Dunhill Hitam 16",  new Integer(16000)},
@@ -427,31 +403,68 @@ public class Percobaan1 extends javax.swing.JFrame {
             jTable3.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 270, 220));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 270, 220));
 
+        GarisBatas3.setForeground(new java.awt.Color(204, 0, 51));
         GarisBatas3.setText("====================================");
         getContentPane().add(GarisBatas3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 260, -1));
 
         NamaBarang.setFont(new java.awt.Font("Dialog", 1, 15)); // NOI18N
         NamaBarang.setForeground(new java.awt.Color(255, 255, 0));
         NamaBarang.setText("Nama Barang");
-        getContentPane().add(NamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 110, -1));
+        getContentPane().add(NamaBarang, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 110, -1));
 
-        Tampil_Nama.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Tampil_NamaActionPerformed(evt);
+        Tampil_Nama.setEditable(false);
+        getContentPane().add(Tampil_Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 120, -1));
+
+        tabel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Nama", "Jumlah", "Harga Total"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
-        getContentPane().add(Tampil_Nama, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 120, -1));
+        jScrollPane1.setViewportView(tabel);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Project1/Gambar/rokook.jpg"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, 300, 150));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, 310, 220));
+
+        Reset1.setText("Reset");
+        Reset1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Reset1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Reset1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 550, 80, 30));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\RIAN\\Documents\\download.jpg.jfif")); // NOI18N
+        jLabel4.setPreferredSize(new java.awt.Dimension(390, 230));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 290, 230, 230));
 
         Background.setBackground(new java.awt.Color(0, 0, 0));
         Background.setFont(new java.awt.Font("Lucida Fax", 3, 24)); // NOI18N
         Background.setForeground(new java.awt.Color(255, 255, 0));
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Project1/Gambar/black-background-pattern-3.jpg"))); // NOI18N
-        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 590));
+        getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 940, 590));
 
         pack();
     }// </editor-fold>                        
@@ -532,7 +545,7 @@ public class Percobaan1 extends javax.swing.JFrame {
         System.exit(0);
     }                                    
 
-    private void CancelActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void TambahActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
         TampilJumlahBarang.setText("");
         TampilHargaSatuan1.setText("");
@@ -551,7 +564,7 @@ public class Percobaan1 extends javax.swing.JFrame {
         MalboroMerah.setSelected(false);
         MalboroPutih.setSelected(false);
         LaIce.setSelected(false);
-        LuckyStrike.setSelected(false);        
+        LuckyStrike.setSelected(false);
     }                                      
 
     private void BayarActionPerformed(java.awt.event.ActionEvent evt) {                                      
@@ -561,26 +574,45 @@ public class Percobaan1 extends javax.swing.JFrame {
 
         sisa = cash1 - bayar;
         sisa1 = Double.toString(sisa);
+        if (cash1 < bayar) {
+            JOptionPane.showMessageDialog(null, "Maaf Uang Anda Kurang", "\tWarning", JOptionPane.WARNING_MESSAGE);   
+        } else {
         TampilKembalian.setText("Rp. " + sisa1);
+        mdl.addRow(new Object[]{Tampil_Nama.getText(), TampilJumlahBarang.getText(), TampilTotalBayar.getText()});
+        tabel.setModel(mdl);
+        }
     }                                     
 
-    private void TampilKembalianActionPerformed(java.awt.event.ActionEvent evt) {                                                
+    private void Reset1ActionPerformed(java.awt.event.ActionEvent evt) {                                       
         // TODO add your handling code here:
-    }                                               
+        TampilJumlahBarang.setText("");
+        TampilHargaSatuan1.setText("");
+        TampilDiskon.setText("");
+        TampilTotalBayar.setText("");
+        TampilPembayaranCash.setText("");
+        TampilKembalian.setText("");
+        Tampil_Nama.setText("");
+        Surya16.setSelected(false);
+        DnhillHitam16.setSelected(false);
+        DunhillPutih16.setSelected(false);
+        mdl.getDataVector().removeAllElements();
+        mdl.fireTableDataChanged();
+        Tampil_Nama.requestFocus();
+        Surya12.setSelected(false);
+        Ubold.setSelected(false);
+        Djarum76.setSelected(false);
+        Cigarillos.setSelected(false);
+        MalboroMerah.setSelected(false);
+        MalboroPutih.setSelected(false);
+        LaIce.setSelected(false);
+        LuckyStrike.setSelected(false);
+        mdl.getDataVector().removeAllElements();
+        mdl.fireTableDataChanged();
+        tabel.setModel(mdl);
+        Tampil_Nama.requestFocus();
+    }                                      
 
-    private void TampilPembayaranCashActionPerformed(java.awt.event.ActionEvent evt) {                                                     
-        // TODO add your handling code here:
-    }                                                    
-
-    private void TampilTotalBayarActionPerformed(java.awt.event.ActionEvent evt) {                                                 
-        // TODO add your handling code here:
-    }                                                
-
-    private void TampilDiskonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // TODO add your handling code here:
-    }                                            
-
-    private void TampilJumlahBarangKeyPressed(java.awt.event.KeyEvent evt) {                                              
+    private void TampilJumlahBarangKeyReleased(java.awt.event.KeyEvent evt) {                                               
         // TODO add your handling code here:
         harga = Integer.parseInt(TampilHargaSatuan1.getText());
         jumlahBeli = Integer.parseInt(TampilJumlahBarang.getText());
@@ -596,23 +628,7 @@ public class Percobaan1 extends javax.swing.JFrame {
 
         totalBayar = Subtotal - diskon;
         TampilTotalBayar.setText(" " + totalBayar);
-    }                                             
-
-    private void TampilJumlahBarangActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        // TODO add your handling code here:
-    }                                                  
-
-    private void TampilHargaSatuan1ActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        // TODO add your handling code here:
-    }                                                  
-
-    private void BayarMouseClicked(java.awt.event.MouseEvent evt) {                                   
-        // TODO add your handling code here:
-    }                                  
-
-    private void Tampil_NamaActionPerformed(java.awt.event.ActionEvent evt) {                                            
-        // TODO add your handling code here:
-    }                                           
+    }                                              
 
     /**
      * @param args the command line arguments
@@ -653,7 +669,6 @@ public class Percobaan1 extends javax.swing.JFrame {
     // Variables declaration - do not modify                     
     private javax.swing.JLabel Background;
     private javax.swing.JButton Bayar;
-    private javax.swing.JButton Cancel;
     private javax.swing.JRadioButton Cigarillos;
     private javax.swing.JLabel Diskon;
     private javax.swing.JRadioButton Djarum76;
@@ -673,8 +688,10 @@ public class Percobaan1 extends javax.swing.JFrame {
     private javax.swing.JRadioButton MalboroPutih;
     private javax.swing.JLabel NamaBarang;
     private javax.swing.JLabel PembayaranCash;
+    private javax.swing.JButton Reset1;
     private javax.swing.JRadioButton Surya12;
     private javax.swing.JRadioButton Surya16;
+    private javax.swing.JButton Tambah;
     private javax.swing.JTextField TampilDiskon;
     private javax.swing.JTextField TampilHargaSatuan1;
     private javax.swing.JTextField TampilJumlahBarang;
@@ -690,12 +707,17 @@ public class Percobaan1 extends javax.swing.JFrame {
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JLabel oleh;
+    private javax.swing.JTable tabel;
     private javax.swing.JLabel udin;
     // End of variables declaration                   
+int baris = 0;
+    static Object kolom[] = {" Nama ", " Jumlah ", " Harga Total "};
+    DefaultTableModel mdl = new DefaultTableModel(kolom, baris);
 }
